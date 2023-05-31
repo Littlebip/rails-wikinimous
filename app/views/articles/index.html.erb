@@ -1,0 +1,10 @@
+<%= link_to "New Article", new_article_path %>
+
+<ul>
+  <% @articles.each do |article| %>
+    <div>
+      <li><%= link_to article.title.capitalize, article_path(article) %></li>
+      <li><%= truncate(article.content, length: 100, separator: ' ') %></li>
+    </div>
+  <% end %>
+</ul>
